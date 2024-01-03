@@ -19,6 +19,7 @@
     <main>
     {% if data %}
         <div id="map"></div>
+        <h6>MATCHED ADDRESS: {{data.matchedAddress}}</h6>
     {% endif %}
         <form action="/" method="post" >
             <label for="address" >Get map for address</label>
