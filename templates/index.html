@@ -9,19 +9,23 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <title>Census Leaflet</title>
     <style>
-        #map { height: 180px; width: 180px; margin: 15px; }
-        input {width: 250px;}
+        main{display: flex; flex-direction: column; align-content: center; justify-content: center; height: 90vh; width: 90vw;} 
+        #map {height: 50vh; width: 50vw; margin: 15px; }
+        form{max-width: 33vw;}
+        input {width: 15vw;}
     </style>
 </head>
 <body>
+    <main>
     {% if data %}
         <div id="map"></div>
     {% endif %}
-    <form action="/" method="post" >
-        <label for="address" >Get map for address</label>
-        <input id="address" name="address" type="text" placeholder="11 Wall St, New York, NY 10005" required>
-        <button>Submit</button>
-    </form>
+        <form action="/" method="post" >
+            <label for="address" >Get map for address</label>
+            <input id="address" name="address" type="text" placeholder="11 Wall St, New York, NY 10005" required>
+            <button>Submit</button>
+        </form>
+    </main>
 </body>
 {% if data %}
     <script>
