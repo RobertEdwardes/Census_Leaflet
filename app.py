@@ -12,7 +12,7 @@ def index():
         data=census_json.json()
         addressMatches = data['result']['addressMatches']
         if len(addressMatches) == 0:
-            return f'<h1> No matches for input {address} </h1>'
+            return render_template('index.html', error=address)
         addressMatches = addressMatches[0]
         if census_json.status_code != 200:
             return f'<h1>JSON request went wrong <br> got {census_json.status_code}</h1>'
